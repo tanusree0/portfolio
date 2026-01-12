@@ -3,7 +3,6 @@
 ![Animated Study GIF](https://clipart-library.com/img1/674172.gif)
 <!-- A study/working animation to represent focus and dedication -->
 
----
 
 ## 🚀 About Me
 Hi! I’m **Tanusree Roy**, a **third-year B.Tech student at NIT Agartala**, passionate about **Software Development, DSA, and Web Development**.  
@@ -33,9 +32,9 @@ Check out my live portfolio here: [https://tanusree0.github.io/portfolio/](https
   - Projects  
   - Contact Form  
 - **Coding Profile Links** integrated:
-  - [Codeforces](https://codeforces.com/profile/tanusree0)  
-  - [LeetCode](https://leetcode.com/tanusree0/)  
-  - [CodeChef](https://www.codechef.com/users/tanusree0)  
+  - [Codeforces](https://codeforces.com/profile/tanusree_01)  
+  - [LeetCode](https://leetcode.com/u/Tanusree_01/)  
+  - [CodeChef](https://www.codechef.com/users/tanusreeroy01)  
 
 ---
 
@@ -63,9 +62,11 @@ Check out my live portfolio here: [https://tanusree0.github.io/portfolio/](https
 ---
 
 ## 📬 Contact Me
-- **Email:** tanusreeroy@example.com  
-- **LinkedIn:** [linkedin.com/in/tanusree0](https://www.linkedin.com/in/tanusree0/)  
-- **GitHub:** [github.com/tanusree0](https://github.com/tanusree0)  
+- ✉️ Email: [tanusree6060@gmail.com](mailto:tanusree6060@gmail.com)
+- 💼 LinkedIn: [Tanusree Roy](https://www.linkedin.com/in/tanusree-roy-396a4a224)
+- 🐙 GitHub: [Tanusree0](https://github.com/tanusree0)
+- 💻 LeetCode: [Tanusree_01](https://leetcode.com/u/Tanusree_01/)
+
 
 
 

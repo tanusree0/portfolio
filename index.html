@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanusree Roy | Software Engineer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-main: #0d1117;          /* GitHub Dark Background */
+            --bg-card: #161b22;          /* Secondary Surface */
+            --accent: #58a6ff;           /* Logic/Action Blue */
+            --text-main: #e6edf3;        /* High Contrast White */
+            --text-dim: #8b949e;         /* Muted Gray */
+            --border: #30363d;           /* Subtle Border */
+            --success: #238636;          /* GitHub Green */
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav h3 { font-weight: 700; font-size: 1.2rem; }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* SECTIONS */
+        section {
+            padding: 100px 5% 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 { 
+            font-size: 1.75rem; 
+            margin-bottom: 2rem; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px;
+        }
+
+        h2::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: var(--border);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 160px 5% 100px;
+            gap: 40px;
+        }
+
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 0.5rem; }
+        .hero-text .title { color: var(--accent); font-size: 1.5rem; font-weight: 500; margin-bottom: 1.5rem; }
+        .hero-text p { color: var(--text-dim); font-size: 1.1rem; max-width: 600px; margin-bottom: 2rem; }
+
+        .hero-img {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            padding: 8px;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* CARDS & GRIDS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            transition: 0.2s;
+        }
+
+        .card:hover { border-color: #8b949e; }
+
+        /* PROJECT SPECIFICS */
+        .project-card h3 { color: var(--accent); margin-bottom: 10px; }
+        .tag-list { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
+        .tag { 
+            font-size: 0.75rem; 
+            background: rgba(88, 166, 255, 0.1); 
+            color: var(--accent); 
+            padding: 2px 8px; 
+            border-radius: 12px;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+        }
+
+        .project-points { list-style: none; color: var(--text-dim); font-size: 0.9rem; }
+        .project-points li { margin-bottom: 8px; position: relative; padding-left: 15px; }
+        .project-points li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+         /* CERTIFICATION SPECIFIC STYLES */
+        .cert-card {
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .img-box {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .cert-card:hover img { transform: scale(1.08); }
+
+        .cert-info {
+            padding: 15px;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            text-align: center;
+        }
+        /* STATS/CODING BADGES */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin: 0 10px 10px 0;
+        }
+        .badge:hover { background: var(--border); }
+       /* EDUCATION CUSTOM LAYOUT */
+   /* EDUCATION */
+.education-box{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:center}
+.edu-logo{width:260px;border-radius:20px;background:rgba(255,255,255,.08);padding:25px}
+.edu-content h3{font-size:1.4rem;margin-bottom:10px}
+
+
+
+
+
+        /* BUTTONS */
+        .btn-primary {
+            background: var(--success);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.2s;
+        }
+        .btn-primary:hover { opacity: 0.9; }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 5%;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 850px) {
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <h3>tanusree.roy/</h3>
+        <div class="nav-links">
+            <a href="#coding">Coding Profiles</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certificates</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <p style="color: var(--accent); font-family: monospace;">Hi, my name is</p>
+            <h1>Tanusree Roy.</h1>
+            <div class="title">I build scalable software solutions.</div>
+            <p>Electrical Engineering student at <strong>NIT Agartala</strong> (CGPA 8.59). Passionate about Backend Development, System Design, and solving complex algorithmic challenges.</p>
+            
+            <div style="margin-bottom: 25px;">
+                <a href="https://leetcode.com/u/Tanusree_01/" class="badge"><i class="fa-solid fa-code"></i> LeetCode: 1693</a>
+                <a href="https://codeforces.com/profile/tanusree_01" class="badge"><i class="fa-solid fa-terminal"></i> Codeforces: Pupil</a>
+            </div>
+            
+            <a href="#projects" class="btn-primary">View My Work</a>
+        </div>
+        <div class="hero-img">
+            <img src="https://drive.google.com/thumbnail?id=1BMzP5zN4q9XRtEftAxAB0WerzsBUA1gK&sz=w1000" alt="Tanusree Roy">
+        </div>
+    </section>
+    <!-- EDUCATION -->
+      <section id="education">
+         <div class="glass"> 
+            <h2>Education</h2> 
+            <div class="education-box">
+                 <!-- Logo --> 
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.UR3qMncorNke3fsbJLLzSQAAAA?pid=Api&P=0&h=180" alt="NIT Agartala Logo" class="edu-logo">
+                   <!-- Text --> <div class="edu-content"> 
+                    <h3>National Institute of Technology, Agartala</h3> 
+                    <p>Bachelor Of Technology (Electrical Engineering)</p> 
+                    <p><strong>CGPA:</strong> 8.59</p> <p>2023 to 2027</p> 
+                </div> 
+            </div> 
+        </div> 
+    </section>
+    <section id="projects">
+        <h2> Featured Projects</h2>
+        <div class="grid">
+            <div class="card project-card">
+                <h3>Bharat E-Vote</h3>
+                <div class="tag-list">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">JWT</span>
+                    <span class="tag">Bcrypt</span>
+                </div>
+                <ul class="project-points">
+                    <li>Built a high-concurrency backend for 10,000+ simultaneous voters.</li>
+                    <li>Implemented Aadhaar-based authentication with strict server-side invariants.</li>
+                    <li>Optimized performance to achieve <200ms end-to-end latency.</li>
+                </ul>
+                <a href="https://github.com/tanusree0/e-vote" class="btn-secondary">Source Code</a>
+            </div>
+
+            <div class="card project-card">
+                <h3>TCP Chat App</h3>
+                <div class="tag-list">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Socket.IO</span>
+                    <span class="tag">Real-time</span>
+                </div>
+                <ul class="project-points">
+                    <li>Bi-directional communication system for concurrent messaging.</li>
+                    <li>Reduced broadcast latency to ensure smooth real-time interactions.</li>
+                    <li>Responsive UI designed for cross-platform compatibility.</li>
+                </ul>
+                <a href="https://github.com/tanusree0/tcp_chat_app" class="btn-secondary">Source Code</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="coding">
+        <h2> Competitive Programming</h2>
+        <div class="grid">
+            <div class="card">
+                <h3 style="color: var(--accent);">LeetCode</h3>
+                <p style="font-size: 0.9rem; margin: 10px 0;">Solved 500+ problems. Top 13.5% globally. Rating: 1693.</p>
+                <a href="https://leetcode.com/u/Tanusree_01/" target="_blank" class="btn-secondary">View Profile</a>
+            </div>
+             <div class="card">
+                <h3 style="color: var(--accent);">Codeforces</h3>
+                <p style="font-size: 0.9rem; margin: 10px 0;">Pupil Rating (1218) </p>
+                <a href="https://codeforces.com/profile/tanusree_01" target="_blank" class="btn-secondary">View Profile</a>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--accent);">CodeChef</h3>
+                <p style="font-size: 0.9rem; margin: 10px 0;">2★ Rating (1475)</p>
+                <a href="https://www.codechef.com/users/tanusreeroy01" target="_blank" class="btn-secondary">View Profile</a>
+            </div>
+        </div>
+    </section>
+    <section id="certifications">
+        <h2> Professional Certifications</h2>
+        <div class="grid">
+            <a href="https://drive.google.com/file/d/1hVbTWI5zJW280No63IRQp4OjAhHCQekN/view?usp=sharing" target="_blank" class="card cert-card">
+                <div class="img-box">
+                    <img src="https://drive.google.com/thumbnail?id=1hVbTWI5zJW280No63IRQp4OjAhHCQekN&sz=w1000" alt="System Design">
+                </div>
+                <div class="cert-info">System Design Certification</div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1IeA3ZcSdInMwQWeOmGxn4z3dVVnCsWWc/view" target="_blank" class="card cert-card">
+                <div class="img-box">
+                    <img src="https://drive.google.com/thumbnail?id=1IeA3ZcSdInMwQWeOmGxn4z3dVVnCsWWc&sz=w1000" alt="AWS">
+                </div>
+                <div class="cert-info">AWS Training & Certification</div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/16KlHG_LfmUR6cINsGDXFpCrdTETeXJuS/view?usp=sharing" target="_blank" class="card cert-card">
+                <div class="img-box">
+                    <img src="https://drive.google.com/thumbnail?id=16KlHG_LfmUR6cINsGDXFpCrdTETeXJuS&sz=w1000" alt="GSSoC">
+                </div>
+                <div class="cert-info">GirlScript Summer of Code '25</div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1TuPUVUnTRH-PifhIR_ZQQdK8sunt4DW-/view?usp=sharing" target="_blank" class="card cert-card">
+                <div class="img-box">
+                    <img src="https://drive.google.com/thumbnail?id=1TuPUVUnTRH-PifhIR_ZQQdK8sunt4DW-&sz=w1000" alt="Internshala">
+                </div>
+                <div class="cert-info">Internshala Student Partner</div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1LC1Ea9qMXSx1pH7GZSKjiqR_0NpFXn03/view?usp=sharing" target="_blank" class="card cert-card">
+                <div class="img-box">
+                    <img src="https://drive.google.com/thumbnail?id=1LC1Ea9qMXSx1pH7GZSKjiqR_0NpFXn03&sz=w1000" alt="Flipkart">
+                </div>
+                <div class="cert-info">Flipkart Runway: Season 5</div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1e6hh_2v7XH6_m6URdgUBeSD7rin-ofXm/view?usp=sharing" target="_blank" class="card cert-card">
+                <div class="img-box">
+                    <img src="https://drive.google.com/thumbnail?id=1e6hh_2v7XH6_m6URdgUBeSD7rin-ofXm&sz=w1000" alt="Gemini">
+                </div>
+                <div class="cert-info">Gemini Write Off Certificate</div>
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" style="text-align: center; max-width: 600px;">
+        <h2> Get In Touch</h2>
+        <p style="color: var(--text-dim); margin-bottom: 30px;">I am currently looking for software engineering internships and opportunities. Feel free to reach out!</p>
+        <a href="mailto:tanusree6060@gmail.com" class="btn-primary" style="background: transparent; border: 1px solid var(--accent); color: var(--accent);">Say Hello</a>
+        
+        <div style="margin-top: 40px; font-size: 1.5rem;">
+            <a href="https://github.com/tanusree0" target="_blank" style="color: var(--text-dim); margin: 0 15px;"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tanusree-roy-396a4a224" target="_blank" style="color: var(--text-dim); margin: 0 15px;"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Designed & Built by Tanusree Roy © 2026</p>
+</footer>
+
+</body>
+</html>
